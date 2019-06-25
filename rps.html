@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<script>
+    let rpsArray = ["rock","paper","scissors"]
+    function computerPlay(){
+        return rpsArray[Math.floor(math.random()*3)]
+    }
+    function playRound(playerSelection, computerSelection){
+        if playerSelection == "rock"{
+            if computerSelection == "rock" return "That's a Draw!"
+            else if computerSelection == "paper" return "You lose! Paper beats Rock"
+            else return "You win! Rock beats scissors"
+        }
+        else if playerSelection == "paper"{
+            if computerSelection == "rock" return "You win! Paper beats Rock"
+            else if computerSelection == "paper" return "That's a Draw!"
+            else return "You lose! Scissors beats Paper"
+        }
+        else if playerSelection == "scissors"{
+            if computerSelection == "rock" return "You lose! Rock beats Scissors"
+            else if computerSelection == "paper" return "You win! Scissors beats Paper"
+            else return "That's a Draw!"
+        }
+        else return "I'm sorry, I don't recognize that move"
+    }
+</script>
