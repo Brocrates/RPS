@@ -20,33 +20,38 @@
             else if (computerSelection == "paper") return "You win! Scissors beats Paper"
             else return "That's a Draw!"
         }
-        else return "I'm sorry, I don't recognize that move"
+        else {
+            alert("I'm sorry, I don't recognize that move")
+            return "null"
+        }
     }
     function game(){
         playerScore = 0
         computerScore = 0
-        while (playerScore < 3 || computerScore < 3){
+        while (playerScore < 3 && computerScore < 3){
             playerSelection = prompt("Please select rock, paper, or scissors:").toLowerCase()
             computerSelection = computerPlay()
             result = playRound(playerSelection, computerSelection)
             score(result)
             console.log("Player score is currently "+playerScore+", computer score is "+computerScore)
         }
+        if (playerScore === 3){
+            alert("You Win!!!")
+        }
+        else{
+            alert("You lose!!!")
+        }
         
     }
     function score(result){
         if (result.includes("win")){
             playerScore ++
-            break;
+            return
         }
         else if(result.includes("lose")){
             computerScore ++
-            break;
+            return
         }
-        else break;
+        else return
     }
-
-    const playerSelection = "rock"
-    const computerSelection = computerPlay()
-    console.log(playRound(playerSelection,computerSelection))
 </script>
